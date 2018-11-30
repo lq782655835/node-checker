@@ -1,0 +1,25 @@
+{
+  "name": "test_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js --watch index.js",
+    "node": "nodemon node/test1.js",
+    "test": "istanbul cover _mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "http-server": "^0.11.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.7",
+    "should": "^13.2.3",
+    "superagent": "^4.0.0"
+  }
+}
