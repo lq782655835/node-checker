@@ -1,0 +1,1 @@
+console.log(process.env.ENV_TEST, '自定义全局变量')

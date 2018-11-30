@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "nodemon index.js --watch index.js",
     "node": "nodemon node/spider.js",
+    "node:process": "ENV_TEST=test nodemon node/process-env.js",
+    "node:child": "nodemon node/child_process.js",
     "test": "istanbul cover _mocha",
     "proxy": "node ./node/proxy.js",
-    "public": "http-server ./dist -p 3003 -P http://localhost:9000",
+    "public": "http-server -p 3003 -P http://localhost:9000",
     "public:pm2": "pm2-runtime npm -- run public"
   },
   "keywords": [],
