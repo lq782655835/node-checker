@@ -10,6 +10,7 @@
     "node:child": "nodemon node/child_process.js",
     "node:url": "nodemon node/url.js",
     "node:fs": "node node/fs.js",
+    "node:http": "nodemon --inspect node/http.js",
     "koa": "nodemon node/koa.js",
     "test": "istanbul cover _mocha",
     "proxy": "node ./node/proxy.js",
@@ -20,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "http": "0.0.0",
@@ -30,6 +32,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.7",
     "pm2": "^3.2.2",
+    "request": "^2.88.0",
     "should": "^13.2.3",
     "superagent": "^4.0.0"
   }
