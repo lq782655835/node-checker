@@ -14,10 +14,11 @@
     "node:proxy": "node ./node/proxy.js",
     "debug": "nodemon --inspect-brk=5858 node/http.js",
     "mongodb": "nodemon node/mongodb.js",
+    "mongoose": "node node/mongoose.js",
     "express": "nodemon index.js --watch index.js",
     "koa": "nodemon node/koa.js",
     "test": "istanbul cover _mocha",
-    "public": "http-server -p 3003 -P http://localhost:9000",
+    "public": "http-server -p 3003",
     "public:pm2": "pm2-runtime npm -- run public"
   },
   "keywords": [],
