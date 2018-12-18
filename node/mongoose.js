@@ -26,15 +26,18 @@ var MyModel = mongoose.model('MyModel', mySchema);
 // MyModel.getLeoRows().then(data => console.log(data))
 
 // 新增
-var mymodel = new MyModel({
-    title: 'mongoose新增一行',
-    author: 'leo'
-})
-console.log(mymodel.getTest()) // mongoose新增一行leo
+// var mymodel = new MyModel({
+//     title: 'mongoose新增一行',
+//     author: 'leo',
+//     otherField: 1123123
+// })
+// console.log(mymodel.getTest())
+// mongoose新增一行leo
 // mymodel.save((error, data) => console.log(error, data))
 
 // 查询
-// MyModel.find({author: 'leo'}, (error, data) => console.log(data))
+// MyModel.find({author: 'leo'}, 'author', (error, data) => console.log(data))
+MyModel.findOne({author: 'leo'}).then(data => console.log(data))
 
 // 更新
 // MyModel.findOneAndUpdate({author: 'leo'}, {author: 'leoUpdate'}, (error, data) => console.log(error, data))

@@ -10,6 +10,17 @@ app.use(bodyParser.urlencoded({ extended: false })) // req.body can get value by
 app.use(bodyParser.json())
 
 app.use((req, res, next) => { // 中间件
+    console.log(`req.query:${req.query}`, req.query)
+    console.log(`req.params:${req.params}`, req.params)
+    console.log(`req.path:${req.path}`)
+    console.log(`req.route:${req.route}`)
+    console.log(`req.body:${req.body}`, req.body) // usually in post method
+    console.log(`req.cookies:${req.cookies}`) // need  cookie-parser middleware
+
+    // http.IncomingMessage
+    console.log(`req.url:${req.url}`)
+    console.log(`req.headers:${req.headers}`, req.headers)
+    console.log(`req.methods:${req.method}`)
     console.log('Time: %d', Date.now());
     next()
 })
@@ -61,4 +72,4 @@ app.get('/file', function(req, res) {
 })
 
 app.use(express.static(__dirname+'/public'))
-app.listen(3000, () => console.log('success'))
+app.listen(3000, () => console.log('success 3000l'))

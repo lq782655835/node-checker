@@ -62,9 +62,29 @@
 //   });
 
 // request：老牌
-const request = require('request'); 
+// const request = require('request'); 
 
-request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => { 
-  console.log(body.url); 
-  console.log(body.explanation); 
-});
+// request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => { 
+//   console.log(body.url); 
+//   console.log(body.explanation); 
+// });
+
+const http = require('http')
+http.createServer(function(req,res){
+  console.log(`req.Url:${req.Url}`)
+  console.log(`req.query:${req.query}`, req.query)
+  console.log(`req.params:${req.params}`, req.params)
+  console.log(`req.path:${req.path}`)
+  console.log(`req.route:${req.route}`)
+  console.log(`req.body:${req.body}`, req.body) // usually in post method
+  console.log(`req.cookies:${req.cookies}`) // need  cookie-parser middleware
+
+  console.log(`req.url:${req.url}`)
+  console.log(`req.headers:${req.headers}`, req.headers)
+  console.log(`req.methods:${req.method}`)
+  console.log('Time: %d', Date.now());
+
+    // res.write('hello world')
+    // res.end()
+    res.end('hello')
+}).listen(3001)
