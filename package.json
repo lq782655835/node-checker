@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/lq782655835/node-checker.git",
   "scripts": {
     "github": "sh deploy.sh",
     "node:spider": "nodemon node/spider.js",
