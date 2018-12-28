@@ -11,6 +11,6 @@ echo 'local commited'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:lq782655835/node-checker.git master
+git push -f https://github.com/lq782655835/node-checker.git master
 echo 'remote commited'
 # cd -
