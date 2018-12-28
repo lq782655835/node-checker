@@ -71,6 +71,7 @@
 
 const http = require('http')
 http.createServer(function(req,res){
+  // req原生不带属性
   console.log(`req.Url:${req.Url}`)
   console.log(`req.query:${req.query}`, req.query)
   console.log(`req.params:${req.params}`, req.params)
@@ -79,12 +80,20 @@ http.createServer(function(req,res){
   console.log(`req.body:${req.body}`, req.body) // usually in post method
   console.log(`req.cookies:${req.cookies}`) // need  cookie-parser middleware
 
+  // req原生属性
   console.log(`req.url:${req.url}`)
   console.log(`req.headers:${req.headers}`, req.headers)
+  console.log(req.headers.host)
+  console.log(req.headers.cookie)
   console.log(`req.methods:${req.method}`)
+
   console.log('Time: %d', Date.now());
 
     // res.write('hello world')
     // res.end()
+    // 可以在header设置任意属性
+    console.log(res.setHeader('Set-Cookie', '123123'))
+    console.log(res.setHeader('Set123', '123123'))
+    console.log(res.getHeader('host'))
     res.end('hello')
-}).listen(3001)
+}).listen(3002)

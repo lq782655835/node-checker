@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sh deploy.sh",
+    "github": "sh deploy.sh",
     "node:spider": "nodemon node/spider.js",
     "node:process": "ENV_TEST=test nodemon node/process-env.js",
     "node:childprocess": "nodemon node/child_process.js",
@@ -16,6 +16,7 @@
     "mongodb": "nodemon node/mongodb.js",
     "mongoose": "node node/mongoose.js",
     "chalk": "node node/chalk.js",
+    "puppeteer": "node node/puppeteer.js",
     "express": "nodemon index.js --watch index.js",
     "koa": "nodemon node/koa.js",
     "test": "istanbul cover _mocha",
@@ -40,7 +41,9 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.7",
     "pm2": "^3.2.2",
+    "puppeteer": "^1.11.0",
     "request": "^2.88.0",
+    "shifty": "^2.6.1",
     "should": "^13.2.3",
     "superagent": "^4.0.0"
   }
