@@ -20,7 +20,8 @@
     "puppeteer": "node node/puppeteer.js",
     "express": "nodemon index.js --watch index.js",
     "koa": "nodemon node/koa.js",
-    "test": "istanbul cover _mocha",
+    "mocha": "istanbul cover _mocha",
+    "jest": "jest",
     "public": "http-server -p 3003",
     "public:pm2": "pm2-runtime npm -- run public",
     "python": "python ./node/deeplearn/hello.py"
@@ -48,5 +49,9 @@
     "shifty": "^2.6.1",
     "should": "^13.2.3",
     "superagent": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "jest": "^23.6.0"
   }
 }
