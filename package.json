@@ -22,7 +22,8 @@
     "koa": "nodemon node/koa.js",
     "test": "istanbul cover _mocha",
     "public": "http-server -p 3003",
-    "public:pm2": "pm2-runtime npm -- run public"
+    "public:pm2": "pm2-runtime npm -- run public",
+    "python": "python ./node/deeplearn/hello.py"
   },
   "keywords": [],
   "author": "",

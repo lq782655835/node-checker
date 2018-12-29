@@ -16,9 +16,25 @@ def fun1():
     print 'this is function'
     return 2
 
+def globalFun():
+        list = range(5)
+        for i in list:
+            print i
+        print len(list) # 5
+
+def listFun():
+    originalList = range(5)
+    # originalList.append(123)
+    originalList[len(originalList):] = [123]
+    print originalList
+
 # fun1Result = fun1()
 # print fun1Result # 2
 # hello()
 
 # module1.print_func('123')
-print_func('123')
+# print_func('123')
+
+# globalFun()
+
+listFun()
