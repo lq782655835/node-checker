@@ -3,14 +3,14 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+msg="deploy at `date`"
+if [ $# != 0 ]
+  then msg="$*"
+fi
 git add -A
-git commit -m 'deploy'
-
+git commit -m "$msg"
 echo 'local commited'
-# 如果发布到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f https://github.com/lq782655835/node-checker.git master
 echo 'remote commited'
 # cd -
