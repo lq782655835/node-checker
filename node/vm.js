@@ -10,5 +10,6 @@ const vm = require('vm')
 let sandbox = { a: 1}
 sandbox = vm.createContext(sandbox)
 
-let result = vm.runInContext('a * 2', sandbox) // runInContent的sandbox一定需要通过vm.createContext进行创建才不会报错
+vm.runInContext('this.test = function (num){console.log(123);return num}', sandbox) // 给沙箱注入函数
+let result = vm.runInContext('test(a * 2)', sandbox) // runInContent的sandbox一定需要通过vm.createContext进行创建才不会报错
 console.log(result) // 2

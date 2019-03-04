@@ -27,8 +27,24 @@
 // app.listen(3000);
 
 const Koa = require('koa')
+const getPort = require("get-port");
+const open = require("open");
+const router = require("koa-router")();
+const serve = require("koa-static");
+
+router.get('/api/test', async ctx => {
+  const query = ctx.query
+  ctx.body = 'hello' + query.path
+})
 const app = new Koa()
 
+app.use(router.routes());
+app.on("error", err => {
+  console.error("Server error", err);
+  console.error(
+    "Let us know of the error at https://github.com/pomber/git-history/issues"
+  );
+});
 app.use( async ( ctx ) => {
   let url = ctx.url
   // 从上下文的request对象中获取
@@ -49,6 +65,8 @@ app.use( async ( ctx ) => {
   }
 })
 
-app.listen(3000, () => {
-  console.log('[demo] request get is starting at port 3000')
+const port = 3001
+app.listen(port, () => {
+  console.log(`[demo] request get is starting at port ${port}`)
+  open(`http://localhost:${port}`);
 })
