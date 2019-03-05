@@ -31,14 +31,17 @@ const getPort = require("get-port");
 const open = require("open");
 const router = require("koa-router")();
 const serve = require("koa-static");
+const path =require('path')
 
+const sitePath = path.join(__dirname, "../public/");
 router.get('/api/test', async ctx => {
   const query = ctx.query
   ctx.body = 'hello' + query.path
 })
-const app = new Koa()
 
+const app = new Koa()
 app.use(router.routes());
+app.use(serve(sitePath))
 app.on("error", err => {
   console.error("Server error", err);
   console.error(
