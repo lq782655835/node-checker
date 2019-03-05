@@ -33,10 +33,19 @@ const router = require("koa-router")();
 const serve = require("koa-static");
 const path =require('path')
 
+const getCommits = require('./utils/git')
+
 const sitePath = path.join(__dirname, "../public/");
 router.get('/api/test', async ctx => {
   const query = ctx.query
-  ctx.body = 'hello world'
+  ctx.body = 'hello world' + query.path
+})
+
+router.get('/api/commits', async ctx => {
+  const query = ctx.query;
+  const { path = './index.js', last = 10, before = null } = query;
+  const commits = await getCommits(path, last, before);
+  ctx.body = commits;
 })
 
 const app = new Koa()
