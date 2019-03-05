@@ -36,7 +36,7 @@ const path =require('path')
 const sitePath = path.join(__dirname, "../public/");
 router.get('/api/test', async ctx => {
   const query = ctx.query
-  ctx.body = 'hello' + query.path
+  ctx.body = 'hello world'
 })
 
 const app = new Koa()
@@ -68,8 +68,13 @@ app.use( async ( ctx ) => {
   }
 })
 
-const port = 3001
-app.listen(port, () => {
-  console.log(`[demo] request get is starting at port ${port}`)
-  open(`http://localhost:${port}`);
-})
+const startServer = async () => {
+  const port = await getPort({port: 3001})
+  app.listen(port, () => {
+    console.log(`[demo] request get is starting at port ${port}`)
+    open(`http://localhost:${port}`);
+  })
+}
+
+startServer()
+
